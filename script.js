@@ -253,3 +253,27 @@ const app = new TodoApp();
 window.addEventListener('load', () => {
     document.getElementById('taskInput').focus();
 });
+
+
+// Cấu hình Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyCb16o28Z3s1bISOSkm6clx1FTmrdQXP2o",
+  authDomain: "to-do-list-93409.firebaseapp.com",
+  projectId: "to-do-list-93409",
+  storageBucket: "to-do-list-93409.firebasestorage.app",
+  messagingSenderId: "195729285009",
+  appId: "1:195729285009:web:daf8b3079a93b34cb38430"
+};
+
+// Khởi tạo Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Lấy Firestore
+const db = firebase.firestore();
+
+// Test ghi dữ liệu
+db.collection("tasks").add({
+  text: "Test task",
+  done: false,
+  timestamp: firebase.firestore.FieldValue.serverTimestamp()
+});
