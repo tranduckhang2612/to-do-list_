@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Danh Sách Công Việc</h1>
+        
+        <div class="input-container">
+            <input type="text" id="taskInput" placeholder="Nhập công việc mới..." maxlength="100">
+            <input type="datetime-local" id="deadlineInput" title="Deadline (tùy chọn)">
+            <button id="addBtn">Thêm</button>
+        </div>
+
+        <div class="stats">
+            <div>Tổng cộng: <span id="totalTasks">0</span></div>
+            <div>Hoàn thành: <span id="completedTasks">0</span></div>
+            <div>Còn lại: <span id="remainingTasks">0</span></div>
+        </div>
+
+        <ul id="todoList"></ul>
+
+        <div class="empty-state" id="emptyState">
+            Chưa có công việc nào. Hãy thêm công việc đầu tiên! 
+        </div>
+
+        <button class="clear-completed" id="clearCompleted" disabled>
+            Xóa các công việc đã hoàn thành
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
